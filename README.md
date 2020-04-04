@@ -19,6 +19,6 @@
 &nbsp;&nbsp;&nbsp;&nbsp;1、涉及到的服务器清单如下：
 主机|主机名|部署软件
 ---|:--:|---:
-192.168.233.4|zk01、node1|内容
-192.168.233.5|zk02、node2|内容
-192.168.233.6|zk03、node3|内容
+192.168.233.4|zk01、node1|zookeeper、Hadoop(namenode、secondarynamenode)、hbase(master)
+192.168.233.5|zk02、node2|zookeeper、Hadoop(datanode)、hbase(backup master、regionserver)
+192.168.233.6|zk03、node3|zookeeper、Hadoop(datanode)、hbase(regionserver)
