@@ -17,7 +17,7 @@
   register: exist_jdk_dir
 
 - name: 如果安装目录已存在jdk，则将其删除
-  file: path={{ exist_jdk_dir.stdot }} state=absent
+  file: path={{ exist_jdk_dir.stdout }} state=absent
   when: exist_jdk_dir.stdout != "" and (result.failed or is_need.stdout == "True")
 
 - name: 解压jdk到指定目录
