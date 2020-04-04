@@ -33,7 +33,7 @@
 
 - name: 查看/etc/profile文件是否存在JAVA_HOME环境变量
   shell: |
-    grep -e "export JAVA_HOME={{ exist_dir.stdout }}" /etc/profile
+    grep -e "export JAVA_HOME={{ jdk_dir.stdout }}" /etc/profile
   register: is_exist
   ignore_errors: True
 
