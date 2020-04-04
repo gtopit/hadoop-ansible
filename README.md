@@ -21,5 +21,5 @@
 :---:|:---:|:---:
 192.168.233.4|zk01、node1|zookeeper、Hadoop(namenode、secondarynamenode)、hbase(master)
 192.168.233.5|zk02、node2|zookeeper、Hadoop(datanode)、hbase(backup master、regionserver)
-192.168.233.6|zk03、node3|zookeeper、Hadoop(datanode)、hbase(regionserver)
+192.168.233.6|zk03、node3|zookeeper、Hadoop(datanode)、hbase(regionserver)  
 &nbsp;&nbsp;&nbsp;&nbsp;如果想要自定义软件安装的服务器，请修改hosts文件；如果想要修改其他配置，请修改group_vars/all.yml文件  
