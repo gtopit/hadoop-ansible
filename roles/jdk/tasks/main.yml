@@ -24,7 +24,7 @@
   unarchive: src={{ item }} dest={{ installed_dir }}
   with_fileglob:
     - "{{ software_dir }}/jdk-*.tar.gz"
-  when: exist_jdk_dir.stdout == "" and (result.failed or is_need.stdout == "True")
+  when: result.failed or is_need.stdout == "True"
 
 - name: 查找jdk解压后的目录
   shell: |
