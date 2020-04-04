@@ -16,7 +16,9 @@
 ---
 **使用示例1**  
 &nbsp;&nbsp;&nbsp;&nbsp;自动化一键部署jdk、zookeeper、Hadoop、hbase  
-
-
-  
+&nbsp;&nbsp;&nbsp;&nbsp;1、涉及到的服务器清单如下：
+表头|表头|表头
+---|:--:|---:
+内容|内容|内容
+内容|内容|内容
 
