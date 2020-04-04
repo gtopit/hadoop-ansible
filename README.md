@@ -17,7 +17,7 @@
 **使用示例1**  
 &nbsp;&nbsp;&nbsp;&nbsp;自动化一键部署jdk、zookeeper、Hadoop、hbase  
 &nbsp;&nbsp;&nbsp;&nbsp;1、涉及到的服务器清单如下：
-主机|主机名|部署软件
+主机|主机名|-部署软件-
 ---|:--:|---:
 192.168.233.4|zk01、node1|zookeeper、Hadoop(namenode、secondarynamenode)、hbase(master)
 192.168.233.5|zk02、node2|zookeeper、Hadoop(datanode)、hbase(backup master、regionserver)
