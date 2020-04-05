@@ -26,3 +26,5 @@
 ---
 如果想要自定义软件安装的服务器，请修改hosts文件；如果想要修改其他配置（如软件压缩包所在目录，安装目录），请修改group_vars/all.yml文件。  
 默认需要安装的软件放在/usr/local/software，安装目录在/usr/local/installed。  
+使用步骤：
+1、在解压后的顶级目录（即hadoop-ansible目录）执行ansible para -i hosts -m authorized_key -a "user=root key='{{ lookup('file','~/.ssh/id_rsa.pub') }}'" 命令，实现免密登录。  
