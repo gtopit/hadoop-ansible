@@ -1,6 +1,6 @@
 - name: 查看zookeeper在安装目录是否已存在
   shell: |
-    find {{ installed_dir }} -name zookeeper-[0-9]*.[0-9]*.[0-9]* -type d
+    find {{ installed_dir }} -name *zookeeper-[0-9]*.[0-9]*.[0-9]* -type d
   register: exist_zk_dir
 
 - name: 存在则将其删除
@@ -10,11 +10,11 @@
 - name: 安装zookeeper到指定目录
   unarchive: src={{ item }} dest={{ installed_dir }}
   with_fileglob:
-    - "{{ software_dir }}/zookeeper-*.tar.gz"
+    - "{{ software_dir }}/*zookeeper-*.tar.gz"
 
 - name: 查看zookeeper安装目录
   shell: |
-    find {{ installed_dir }} -name zookeeper-[0-9]*.[0-9]*.[0-9]*  -type d
+    find {{ installed_dir }} -name *zookeeper-[0-9]*.[0-9]*.[0-9]*  -type d
   register: zookeeper_dir
 
 - name: 查看/etc/profile文件中是否存在zookeeper环境变量
