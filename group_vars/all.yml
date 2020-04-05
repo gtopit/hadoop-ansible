@@ -18,8 +18,8 @@ zookeeper_data_dir: "/usr/local/data/zookeeper"
 client_port: 2181
 
 # 指定Hadoop namenode数据存放位置
-dfs_namenode_name_dir: "/user/local/data/hadoop/name"
+dfs_namenode_name_dir: "/usr/local/data/hadoop/name"
 
 # 指定Hadoop datanode数据存放位置
-dfs_datanode_data_dir: "/user/local/data/hadoop/data"
+dfs_datanode_data_dir: "/usr/local/data/hadoop/data"
 
