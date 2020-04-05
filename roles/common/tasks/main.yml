@@ -1,3 +1,13 @@
+- name: 安装expect
+  yum: name=expect state=present
+
+- name: 发送一次scp命令以便后续无需再次出现选择提示导致进程阻塞
+  shell: |
+    spawn {{ hadoop_dir.stdout }}/bin/hdfs namenode -format
+    expect "(yes/no)" { send "yes\r" }
+    interact
+  ignore_errors: True
+
 - name: 关闭防火墙
   service: name=firewalld state=stopped enabled=false
 

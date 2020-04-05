@@ -6,8 +6,15 @@
 - name: 删除数据目录
   file: path={{ dfs_namenode_name_dir }} state=absent
 
-#- name: 安装expect（非首次执行）
-#  yum: name=expect state=present
+- name: 安装expect（非首次执行）
+  yum: name=expect state=present
+  when: is_exist.stdout != ""
+
+#- name: 查找namenode数据目录
+#  shell: |
+#    find {{ dfs_namenode_name_dir }} -name current -type d
+#  register: is_exist
+
 
 #- name: 生成hdfs namenode节点格式化脚本（非首次执行）
 #  shell: |
@@ -17,6 +24,7 @@
 #    expect "(Y or N)" { send "Y\r" }
 #    interact
 #    EOF
+#  when: is_exist.stdout != ""
 
 #- name: 增加可执行权限（非首次执行）
 #  file:
@@ -24,14 +32,16 @@
 #    owner: root
 #    group: root
 #    mode: '0755'
+#  when: is_exist.stdout != ""
 
 #- name: 在namenode节点格式化hdfs（非首次执行）
 #  shell: |
 #    {{ tmp_dir }}/namenode-format.sh
+#  when: is_exist.stdout != ""
 
 - name: 在namenode节点格式化hdfs
   shell: |
-    {{ hadoop_dir.stdout }}/bin/hdfs namenode -format
+    {{ hadoop_dir.stdout }}/bin/hdfs namenode -format -force
 
 - name: 启动hdfs
   shell: |
