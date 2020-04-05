@@ -6,7 +6,7 @@
 - name: 如果存在则删除
   file: path={{ exist_hbase_dir }} state=absent
 
-- name: 解压jdk到指定目录
+- name: 解压hbase到指定目录
   unarchive: src={{ item }} dest={{ installed_dir }}
   with_fileglob:
     - "{{ software_dir }}/hbase-[0-9]*.tar.gz"
