@@ -29,7 +29,7 @@
     <property>
         <name>hbase.cluster.distributed</name>
         <value>true</value>
-</property>
+    </property>
     <property>
         <name>hbase.zookeeper.quorum</name>
         <value>{% for host in groups['zookeeper'] %}{{ hostvars[host].zk_hostname }}{% if not loop.last  %},{% endif %}{% endfor %}</value>
@@ -37,9 +37,5 @@
     <property>
         <name>hbase.zookeeper.property.dataDir</name>
         <value>{{ zookeeper_data_dir }}</value>
-    </property>
-    <property>
-        <name>hbase.unsafe.stream.capability.enforce</name>
-        <value>false</value>
     </property>
 </configuration>
