@@ -1,21 +1,3 @@
-- name: 安装expect
-  yum: name=expect state=present
-
-- name: 生成脚本
-  template: src=ssh.sh.j2 dest={{ tmp_dir }}/ssh.sh
-
-- name: 增加可执行权限
-  file:
-    path: "{{ tmp_dir }}/ssh.sh"
-    owner: root
-    group: root
-    mode: '0755'
-
-- name: 发送一次scp命令以便后续无需再次出现选择提示导致进程阻塞
-  shell: |
-    {{ tmp_dir }}/ssh.sh
-  ignore_errors: True
-
 - name: 关闭防火墙
   service: name=firewalld state=stopped enabled=false
 
