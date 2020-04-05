@@ -55,6 +55,7 @@
 - name: 启动zookeeper
   shell: |
     service zookeeper restart
+  ignore_errors: True
 
 - name: 添加开机启动项
   shell: chkconfig --add zookeeper
