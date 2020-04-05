@@ -4,9 +4,9 @@
 192.168.233.6 ansible_connection=ssh ansible_ssh_user=root ansible_ssh_pass=gtop@2020
 
 [zookeeper]
-192.168.233.4 zk_hostname=zk01 zk_myid=1 zk_heartbeat_port=2888 zk_leader_port=3888
-192.168.233.5 zk_hostname=zk02 zk_myid=2 zk_heartbeat_port=2888 zk_leader_port=3888
-192.168.233.6 zk_hostname=zk03 zk_myid=3 zk_heartbeat_port=2888 zk_leader_port=3888
+192.168.233.4 zk_hostname=node1 zk_myid=1 zk_heartbeat_port=2888 zk_leader_port=3888
+192.168.233.5 zk_hostname=node2 zk_myid=2 zk_heartbeat_port=2888 zk_leader_port=3888
+192.168.233.6 zk_hostname=node3 zk_myid=3 zk_heartbeat_port=2888 zk_leader_port=3888
 
 [hdp_namenode]
 192.168.233.4 hdp_hostname=node1 hdp_namenode_port=9000 dfs_http_port=50070 dfs_secondary_http_port=50090
