@@ -4,7 +4,7 @@
   register: exist_zk_dir
 
 - name: 存在则将其删除
-  file: path={{ exist_zk_dir.stdot }} state=absent
+  file: path={{ exist_zk_dir.stdout }} state=absent
   when: exist_zk_dir.stdout != ""
 
 - name: 安装zookeeper到指定目录
