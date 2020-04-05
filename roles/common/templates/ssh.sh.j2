@@ -1,0 +1,6 @@
+#!/usr/bin/expect
+{% for host in groups['hdp'] %}
+spawn scp -r a.tmp root@{{ hostvars[host].zk_hostname }}:/root
+expect "(yes/no)" { send "yes\r" }
+interact
+{% endfor %}
