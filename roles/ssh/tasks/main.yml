@@ -5,7 +5,9 @@
   yum: name=expect state=present
 
 - name: 生成脚本
-  template: src=ssh.sh.j2 dest={{ tmp_dir }}/ssh.sh
+  template: src={{ item }} dest={{ tmp_dir }}/{{ item.split('.')[:-1]|join('.') }}
+  loop:
+    - ssh.sh.j2
 
 - name: 增加可执行权限
   file:
