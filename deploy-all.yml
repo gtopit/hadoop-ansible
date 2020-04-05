@@ -46,3 +46,19 @@
       name: namenode
     tags:
       - namenode
+
+- hosts: hbase
+  gather_facts: False
+  tasks:
+  - import_role:
+      name: hbase
+    tags:
+      - hbase
+
+- hosts: hbase_master
+  gather_facts: False
+  tasks:
+  - import_role:
+      name: hbase-master
+    tags:
+      - hbase-master
