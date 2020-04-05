@@ -23,14 +23,6 @@
     tags: 
       - zk
 
-- hosts: hdp
-  gather_facts: False
-  tasks:
-  - import_role:
-      name: hadoop
-    tags:
-      - hdp
-
 - hosts: hdp_namenode
   gather_facts: False
   tasks:
@@ -38,6 +30,14 @@
       name: ssh
     tags:
       - ssh
+
+- hosts: hdp
+  gather_facts: False
+  tasks:
+  - import_role:
+      name: hadoop
+    tags:
+      - hdp
     
 - hosts: hdp_namenode
   gather_facts: False

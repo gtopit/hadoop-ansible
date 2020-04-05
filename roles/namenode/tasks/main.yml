@@ -6,9 +6,9 @@
 - name: 删除数据目录
   file: path={{ dfs_namenode_name_dir }} state=absent
 
-- name: 安装expect（非首次执行）
-  yum: name=expect state=present
-  when: is_exist.stdout != ""
+#- name: 安装expect（非首次执行）
+#  yum: name=expect state=present
+#  when: is_exist.stdout != ""
 
 #- name: 查找namenode数据目录
 #  shell: |
