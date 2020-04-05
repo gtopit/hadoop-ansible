@@ -55,7 +55,7 @@
 - name: 若2181端口被占用，则先停止
   shell: |
     pid=$(netstat -ntlp | grep 2181 | awk '{print $7}')
-    pid=${$pid/[^[0-9]*/''}
+    pid=${pid/[^[0-9]*/''}
     kill -9 $pid
   ignore_errors: True
 
