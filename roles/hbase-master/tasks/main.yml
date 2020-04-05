@@ -1,6 +1,6 @@
 - name: 查看hbase安装目录
   shell: |
-    find {{ installed_dir }} -name hbase_[0-9]*.[0-9]*.[0-9]* -type d
+    find {{ installed_dir }} -name hbase-[0-9]*.[0-9]*.[0-9]* -type d
   register: hbase_dir
 
 - name: 启动hbase
