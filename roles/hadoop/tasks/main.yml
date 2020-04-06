@@ -33,7 +33,7 @@
   copy: src={{ item }} dest={{ hadoop_dir.stdout }}/sbin/{{ item }}
   loop:
     - start-dfs.sh
-    - stop-dfs.sh 
+    - start-yarn.sh
 
 - name: 查看/etc/profile文件中是否存在Hadoop环境变量
   shell: |
