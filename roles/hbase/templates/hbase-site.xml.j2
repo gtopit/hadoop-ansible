@@ -34,6 +34,10 @@
         <name>hbase.zookeeper.quorum</name>
         <value>{% for host in groups['zookeeper'] %}{{ hostvars[host].zk_hostname }}{% if not loop.last  %},{% endif %}{% endfor %}</value>
     </property>
+    ​<property>
+        ​<name>hbase.zookeeper.property.clientPort</name>
+        ​<value>2181</value>
+   ​</property>
     <property>
         <name>hbase.zookeeper.property.dataDir</name>
         <value>{{ zookeeper_data_dir }}</value>

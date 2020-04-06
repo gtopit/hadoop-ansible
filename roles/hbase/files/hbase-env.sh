@@ -28,6 +28,8 @@
 . /etc/profile
 export JAVA_HOME=$JAVA_HOME
 
+export HBASE_MANAGES_ZK=false
+
 # Extra Java CLASSPATH elements.  Optional.
 # export HBASE_CLASSPATH=
 
