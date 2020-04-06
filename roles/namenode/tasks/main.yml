@@ -55,3 +55,13 @@
 - name: 查看hdfs状态信息
   debug:
     var=hdfs_status.stdout_lines
+
+- name: 查看hdfs是否处于安全模式
+  shell: |
+    sleep 1 && {{ hadoop_dir.stdout }}/bin/hdfs dfsadmin -safemode get
+  register: safemode_status
+
+- name: 查看hdfs是否处于安全模式
+  debug:
+    msg: "{{ safemode_status }}"
+    
