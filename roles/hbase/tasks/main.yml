@@ -21,7 +21,7 @@
   loop:
     - hbase-site.xml.j2
     - regionservers.j2
-    - backup-master.j2
+    - backup-masters.j2
     - hostname.sh.j2
 
 - name: 不需要改动的配置文件放入对应目录
